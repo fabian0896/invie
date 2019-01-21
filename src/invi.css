@@ -201,32 +201,79 @@ margin-left: 0;
 
 
 .guitarra {
-margin: 10px 10px 40px 10px;
-padding: 10px;
+margin: 10px 0 40px;
+padding: 10px 2em;
 /*overflow: hidden;*/
 border: 1px solid #1F313C;
 border-radius: 8px;
+display: flex;
+align-items: center;
+min-height: 250px;
+transition: .3s;
+position: relative;
 }
+
+.guitarra:hover{
+  box-shadow: 10px 10px 0 #FF3149;
+}
+
+.guitarra:nth-of-type(even):hover{
+  box-shadow: -10px 10px 0 black;
+}
+
+.guitarra-name{
+  font-size: 3em;
+  margin: 0 0 .2em;
+  border-bottom: 2px dashed #1e313d;
+  padding-bottom: .2em;
+}
+
+.guitarra:nth-of-type(even){
+  justify-content: flex-end
+}
+.guitarra:nth-of-type(odd){
+
+}
+
+.guitarra:nth-of-type(even) .guitarra-image{
+  left: 0;
+  right: initial;
+}
+
 .guitarra ol {
 padding: 0;
+list-style: none;
+counter-reset: features;
 }
-.guitarra.b {
+
+.guitarra li:before{
+  counter-increment: features;
+  content: counter(features) ". "
+}
+
+/* .guitarra.b {
 height: 190px;
+} */
+
+.guitarra-image{
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 
-.derecha {
+/* .derecha {
 float: right;
 position: relative;
 top: -127px;
-}
+} */
 
-.izquierda {
+/* .izquierda {
 float: left;
 position: relative;
-}
+} */
 
-.contenedor-guitarra-a {
+/* .contenedor-guitarra-a {
 padding-left: 20px;
 }
 .contenedor-guitarra-b {
@@ -234,7 +281,7 @@ margin-left: 370px;
 position: relative;
 bottom: 90px;
 
-}
+} */
 
 .header {
 position: relative;

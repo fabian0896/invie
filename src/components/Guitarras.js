@@ -10,32 +10,27 @@ class Guitarras extends React.Component{
       <div className="video-demo-contenedor">
         <div className="video-demo">
           <div className="video-responsive-contenedor">
-            <iframe className="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen></iframe>
+            <iframe className="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameBorder="0" allowFullScreen></iframe>
           </div>
         </div>
       </div>
-      <article className="guitarra"> 
-        <img className="derecha" src={ acustica }  alt="Guitarra Invie Acustica" width="350"/>
-        <div className="contenedor-guitarra-a">
-          <h3 className="title-b">Invie Acustica</h3>
-          <ol>
-            <li>Estilo vintage</li>
-            <li>Madera pura</li>
-            <li>Incluye estuche invisible de aluminio</li>
-          </ol>
-        </div>
-      </article>
-      <article className="guitarra b"> 
-        <img className="izquierda" src={ clasica } alt="Guitarra Invie Classic" width="350"/>
-        <div className="contenedor-guitarra-b">
-          <h3 className="title-b">Invie Classic</h3>
-          <ol>
-            <li>Estilo vintage</li>
-            <li>Liviana</li>
-            <li>Inicia tu camino como Rockstar</li>
-          </ol>
-        </div>
-      </article>
+      {
+        this.props.guitarras.map((guitarra, index)=>(
+        <article key={index} className="guitarra"> 
+          <img className="guitarra-image" src={ guitarra.image }  alt={ guitarra.alt } width="350"/>
+          <div className="contenedor-guitarra">
+            <h3 className="guitarra-name">{ guitarra.name }</h3>
+            <ol>
+              {
+                guitarra.features.map((feature, index)=>(
+                  <li key={ index } >{feature}</li>
+                ))
+              }
+            </ol>
+          </div>
+        </article>
+        ))
+      }
     </section>
         )
     }
