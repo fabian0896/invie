@@ -17,7 +17,13 @@ class Portada extends React.Component {
       <section id="portada" className={`portada background ${ this.props.isAnimated }`}>
         <header id="header" className="header contenedor">
           <figure className="logotipo">
-            <img src={this.props.logo} width="186" height="60" alt="Invie logotipo" />
+          <CSSTransitionGroup
+          transitionName='pop'
+          transitionEnterTimeout={600}
+          transitionLeaveTimeout={600}
+        >
+            <img key={ this.props.logo } src={this.props.logo} width="186" height="60" alt="Invie logotipo" />
+        </CSSTransitionGroup>
           </figure>
           <span className="burguer-button icon-menu" id="burguer-button"></span>
           <nav className="menu" id="menu">

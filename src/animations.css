@@ -64,6 +64,44 @@
 
 
 
+.pop-enter{
+  position: absolute;
+  transform: scale(0);
+  animation: popEnter .3s linear;
+  animation-delay: .3s
+}
+
+.pop-leave{
+  animation: popLeave .3S linear forwards;
+}
+
+
+@keyframes popEnter{
+  from{
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+
+@keyframes popLeave{
+  from{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  to{
+    transform: scale(0);
+    display: none;
+  }
+}
+
 
 
 @keyframes shake {
