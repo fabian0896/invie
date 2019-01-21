@@ -12,6 +12,7 @@ import acustica from './images/invie-acustica.png';
 import clasica from './images/invie-classic.png'
 import esterA from './images/easter-a.png'
 import esterB from './images/easter-b.png'
+import platziLogo from './platzi-logo.png';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -21,6 +22,7 @@ import { createStore } from 'redux';
 
 
 const data = {
+    isAnimated: false,
     menu: [
       {
         href: 'index.html',
@@ -82,12 +84,9 @@ const store = createStore(reducer, data)
 
 
 const ester = {
-    menu: [
-        {
-          href: 'index.html',
-          title: 'Home'
-        }
-    ],
+  logoPortada: platziLogo,
+  isAnimated: 'is-animated', 
+   menu: [],
     guitarras: [
         {
           image: esterA,

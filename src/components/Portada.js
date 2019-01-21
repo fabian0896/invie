@@ -1,18 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 
 function mapStateToProps(state){
   return {
     logo: state.logoPortada,
-    menu: state.menu
+    menu: state.menu,
+    isAnimated: state.isAnimated
   }
 }
 
 class Portada extends React.Component {
   render() {
     return (
-      <section id="portada" className="portada background">
+      <section id="portada" className={`portada background ${ this.props.isAnimated }`}>
         <header id="header" className="header contenedor">
           <figure className="logotipo">
             <img src={this.props.logo} width="186" height="60" alt="Invie logotipo" />
@@ -30,11 +32,20 @@ class Portada extends React.Component {
             </ul>
           </nav>
         </header>
-        <div className="contenedor">
-          <h1 className="titulo">Guitarras <span>invie</span>sibles</h1>
-          <h3 className="title-a">Sé la estrella de rock que siempre quisiste ser</h3>
-          <a className="button" href="#guitarras">Conoce mas</a>
-        </div>
+        <CSSTransitionGroup
+          transitionName="animationInOut"
+          transitionEnterTimeout={800}
+          transitionLeaveTimeout={800}
+        >
+        {
+          !this.props.isAnimated &&
+          <div className="contenedor" key="portada">
+            <h1 className="titulo">Guitarras <span>invie</span>sibles</h1>
+            <h3 className="title-a">Sé la estrella de rock que siempre quisiste ser</h3>
+            <a className="button" href="#guitarras">Conoce mas</a>
+          </div>
+        }
+        </CSSTransitionGroup>
       </section>
     )
   }
