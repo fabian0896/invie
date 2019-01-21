@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import platzi from './platzi-logo.png';
 import './invi.css';
-import { CSSTransitionGroup } from 'react-transition-group'
 import Portada from './components/Portada';
 import Guitarras from './components/Guitarras';
 import Footer from './components/Footer';
-import logoPortada from './images/invie.png'
-import acustica from './images/invie-acustica.png';
-import clasica from './images/invie-classic.png'
-
-import cheet from 'cheet.js';
 
 
-cheet('i n v i e', ()=>{
-  console.log("lo lograste!");
-});
 
-cheet('g o b a c k', ()=>{
-  console.log("regresaste al estado inicial");
-})
 
-const data = {
+
+
+
+/* const data = {
   menu: [
     {
       href: 'index.html',
@@ -65,7 +54,7 @@ const data = {
   ]
 
 
-}
+} */
 
 
 
@@ -75,9 +64,9 @@ class Invi extends Component {
     return (
       <section className="Invi">
         {/* Portada*/ }
-        <Portada menu={ data.menu } logo={ data.logoPortada }/>
+        <Portada />
         {/*Gitarras*/ }
-        <Guitarras guitarras={ data.guitarras }/>
+        <Guitarras/>
         {/*Foorer*/ }
         <Footer/>
       </section>
